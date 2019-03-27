@@ -42,6 +42,15 @@ class login extends Component {
            Cookies.set('access_token',results.access_token, { path: '/dashboard'});
            Cookies.set('access_token',results.access_token, { path: '/project'});
            Cookies.set('access_token',results.access_token, { path: '/project/add'});
+           Cookies.set('access_token',results.access_token, { path: '/project/detail/:id'});
+           Cookies.set('access_token',results.access_token, { path: '/project/edit/:id'});
+           Cookies.set('access_token',results.access_token, { path: '/building/add'});
+           Cookies.set('access_token',results.access_token, { path: '/building/detail/:id'});
+           Cookies.set('access_token',results.access_token, { path: '/building/edit/:id'});
+           Cookies.set('access_token',results.access_token, { path: '/room/add'});
+           Cookies.set('access_token',results.access_token, { path: '/room/detail/:id'});
+           Cookies.set('access_token',results.access_token, { path: '/room/edit/:id'});
+          
            Cookies.set('refresh_token',results.refresh_token);
           console.log(Cookies.set('access_token',results.access_token));
             alert("Success");
@@ -94,6 +103,7 @@ class login extends Component {
                   <i className="fa fa-lock" aria-hidden="true" />
                 </span>
               </div>
+             
               <div className="container-login100-form-btn">
                 <button className="login100-form-btn" onClick = {e => this.handleFormSubmit(e)}>
                   Login

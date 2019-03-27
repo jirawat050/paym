@@ -10,16 +10,13 @@ class dashboard extends Component {
     
     componentDidMount() {
 
-
-  // console.log("acces "+Cookies.get('access_token'));
-  axios({
+        axios({
            method: 'GET',
            url: 'http://localhost/paym/backoffice/api/v1/staff/me',
            headers: { 
            'access_token': Cookies.get('access_token'),
            'refresh_token':  Cookies.get('refresh_token'),
-          
-       },
+        },
         })
            .then(result =>{
            
@@ -27,7 +24,6 @@ class dashboard extends Component {
             {  
           
                console.log( Cookies.get('access_token'));
-                //console.log(result);
                 const persons = result.data.data;
                 this.setState( { persons: persons.username } )
                 console.log(persons);
@@ -105,7 +101,7 @@ class dashboard extends Component {
               </button>
               <div className="collapse navbar-collapse justify-content-end">
                 <ul className="navbar-nav">
-                  <a className="navbar-brand" href="javascript:void(0)">username</a>
+                  <a className="navbar-brand" href="javascript:void(0)"> {this.state.persons}</a>
                 </ul>
                 
               </div>
@@ -113,15 +109,9 @@ class dashboard extends Component {
           </nav>
             <div className="content">
  
-                <p>aaaa</p>
-                <ul>
-                <h1>Hello, {this.state.persons}</h1>;
-               </ul>
             </div>
         </div>
-        <button onClick={this.handleClick}>
-        Click me
-      </button>
+    
         </div>
           </body>
     </div>
